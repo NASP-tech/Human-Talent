@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title> Error </title>
+ 
+    <style>
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(236, 58, 102);
+        }
+
+        .Tittle {
+            text-align: center;
+            font-weight: 300;
+            margin: 0px auto 30px auto;
+        }
+
+        .flex{
+            display: flex;
+            justify-content: center;
+            color: #000;
+        }
+
+        #form{
+            padding: 40px 50px;
+            margin: 40px 100px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+        
+        #wrapper{
+			background:url([[@{../templates/img/error.png}]])
+         			no-repeat center center fixed;
+		}
+
+        .label{
+            margin: 5px auto;
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            margin: 10px;
+            color: #787878;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            min-height: 500px;
+            background-color: rgb(219, 124, 183);
+            margin: 100px auto;
+            padding: 10px ;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .show {
+            display: flex;
+            justify-content: center;
+            color: #000;
+        }
+
+        .picture {
+            display: flex;
+            justify-content: center;    
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box" class="container">
+        <h1> ERROR 404 </h1>
+        <h1> Posibles errores </h1>
+        <p>
+            1. Mala contraseña o usuario
+        </p>
+        <p>
+            2. Usuario inactivo
+        </p> 	
+	</div>
+        
+</body>
+</html>

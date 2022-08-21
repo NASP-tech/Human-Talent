@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title> Upgrade employees </title>
+ 
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        body {
+            width: 100%;
+            height: 100vh;
+ 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+ 
+            background: #ef4b4a;
+        }
+ 
+        #box {
+            width: 100%;
+            max-width: 400px;
+            min-height: 400px;
+ 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+ 
+            padding: 2rem;
+            background: #c49595;
+            
+            border-radius: 1rem;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        }
+ 
+        #box form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+    
+        #input {
+           height: 20px;
+           width: 200px;
+           background-color: white;
+        }
+       
+        .Tittle{
+            font-size: 20px;
+            font-weight: 600;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding-bottom: 10px;
+        }
+
+        .title{
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+        }
+
+        label{
+            font-size: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600;
+        }
+
+		
+    </style>
+</head>
+<body>
+     <div id="box">
+        <h1 class="title"> Upgrade Employees </h1>        
+       
+        <form method="post">
+
+            <h2 class="Tittle">Upgrade Employee</h2>
+
+            <label for="code"><b>Employee Code</b></label>
+            <input type="text" placeholder="Enter Code" id="input">
+          
+
+            <button type="submit">Upgrade</button>
+        
+        </form>
+        
+     </div>
+</body>
+</html>

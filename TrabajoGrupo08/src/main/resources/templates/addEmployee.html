@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title> Add employees </title>
+ 
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        body {
+            width: 100%;
+            height: 100vh;
+ 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+ 
+            background: #ffd2d7;
+        }
+ 
+        #box {
+            width: 100%;
+            max-width: 400px;
+            min-height: 400px;
+ 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+ 
+            padding: 2rem;
+            background: #c49595;
+            
+            border-radius: 1rem;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        }
+ 
+        #box form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+    
+        #input {
+           height: 20px;
+           width: 200px;
+           background-color: white;
+        }
+       
+        .Tittle{
+            font-size: 20px;
+            font-weight: 600;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding-bottom: 10px;
+        }
+
+        .title{
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+        }
+
+        label{
+            font-size: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600;
+        }
+        
+        .text-error{
+			color : crimson
+		}
+
+		.btn-register{
+			background-color: #ffd2d7;
+			border-radius: 15px;
+			color: black;
+			text-decoration: none;
+			display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+		}
+    </style>
+</head>
+<body>
+     <div id="box">
+        <h1 class="title"> Add Employees </h1>        
+       
+			<h4>Formulario Registro</h4>
+
+    				<h2 th:if="${error != null}" th:text="${error}" class="text-error"/>
+    				<form method="post" th:action="@{/employee/add}" th:object="${addemployee}">
+
+    					<input type="text" th:field="*{usuario}" placeholder="usuario" th:errorclass="input-error"/>
+    					<p th:if="${#fields.hasErrors('usuario')}" class="text-error"> Campo del Usuario con Error </p>
+    					<ul th:if="${#fields.hasErrors('usuario')}" class="text-error">
+    						<li th:each="error: ${#fields.errors('usuario')}" th:text="${error}"/>
+    					</ul>
+
+    					<input type="text" th:field="*{nombre}" placeholder="nombre" th:errorclass="input-error"/>
+    					<p th:if="${#fields.hasErrors('nombre')}" class="text-error"> Campo del Nombre con Error </p>
+    					<ul th:if="${#fields.hasErrors('nombre')}" class="text-error">
+    						<li th:each="error: ${#fields.errors('nombre')}" th:text="${error}"/>
+    					</ul>
+
+	    				<input type="text" th:field="*{apellido}" placeholder="apellido" th:errorclass="input-error"/>
+    					<p th:if="${#fields.hasErrors('apellido')}" class="text-error"> Campo del Apellido con Error </p>
+    					<ul th:if="${#fields.hasErrors('apellido')}" class="text-error">
+    						<li th:each="error: ${#fields.errors('apellido')}" th:text="${error}"/>
+    					</ul>
+
+    					<input type="text" th:field="*{contratacion}" placeholder="contratacion" th:errorclass="input-error"/>
+    					<p th:if="${#fields.hasErrors('contratacion')}" class="text-error"> Campo del Contratacion con Error </p>
+    					<ul th:if="${#fields.hasErrors('contratacion')}" class="text-error">
+    						<li th:each="error: ${#fields.errors('contratacion')}" th:text="${error}"/>
+    					</ul>
+
+    					<input type="password" th:field="*{contrasena}" placeholder="contrasena" th:errorclass="input-error"/>
+    					<p th:if="${#fields.hasErrors('contrasena')}" class="text-error"> Campo del Contrasena con Error </p>
+    					<ul th:if="${#fields.hasErrors('contrasena')}" class="text-error">
+    						<li th:each="error: ${#fields.errors('contrasena')}" th:text="${error}"/>
+    					</ul>
+
+	    				<input class="btn-register" type="submit" value="Agregar Empleado">
+    				</form >
+        
+     </div>
+</body>
+</html>
